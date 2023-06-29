@@ -1,19 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { StrictMode } from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
+import { AppRoutes } from './AppRoutes'
+import { ErrorBoundary } from './components/error-boundary/ErrorBoundary'
+import { configureStore } from './state/configureStore'
+import { GlobalStyle } from './styles/global'
+import { theme } from './styles/theme'
+import reportWebVitals from './utils/web-vitals'
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const store = configureStore()
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+render(
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <ErrorBoundary>
+        <StrictMode>
+          <AppRoutes />
+        </StrictMode>
+      </ErrorBoundary>
+    </ThemeProvider>
+  </Provider>,
+  document.getElementById('root')
+)
+
+reportWebVitals()

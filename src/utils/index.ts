@@ -1,1 +1,1 @@
-export type Temp = {}
+export * from './web-vitals'
