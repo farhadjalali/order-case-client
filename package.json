@@ -9,6 +9,7 @@
     "test:once": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test --watchAll=true",
     "eject": "react-scripts eject",
+    "test:e2e": "cypress open",
     "analyze": "npm run build && source-map-explorer 'build/static/js/*.js'",
     "release": "standard-version -a && git push --follow-tags",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
@@ -44,6 +45,7 @@
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.14.0",
     "react-toastify": "^9.1.3",
@@ -53,7 +55,6 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "react-scripts": "5.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
@@ -79,6 +80,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.8",
+    "react-scripts": "5.0.1",
     "standard-version": "^9.5.0",
     "ts-jest": "^29.1.0",
     "typescript": "^4.9.5",

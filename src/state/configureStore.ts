@@ -1,8 +1,8 @@
 import { AnyAction, combineReducers, configureStore as reduxConfigureStore, Store } from '@reduxjs/toolkit'
-import { generalReducer } from './general/general-reducer'
+import { travelReducer } from './travel/reducer'
 
 const rootReducer = combineReducers({
-  general: generalReducer,
+  general: travelReducer,
 })
 
 export function configureStore(): Store<unknown, AnyAction> {

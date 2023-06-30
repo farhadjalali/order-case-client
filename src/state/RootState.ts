@@ -1,9 +1,5 @@
-import { useSelector } from 'react-redux'
-import { GeneralState } from './general/general-reducer'
+import { TravelState } from './travel/reducer'
 
-export interface RootState {
-  general: GeneralState
+export type RootState = {
+  travel: TravelState
 }
-
-export const getState = () => useSelector<RootState, RootState>((state: RootState) => state)
-export type GetStateFunction = () => RootState
